@@ -26,7 +26,7 @@ Besides, you probably _should_ follow these instructions.
 
 1. Start with your first roll function, `rollD6`. This function should, in order:
 	* Get a random number from 1-6, using `Math.random`, `Math.ceil`, and the number 6. **Save it somewhere**, because we'll be using it!
-	* Add that number to a list of rolls. A global array would help here!
+	* Add that number to a list of rolls. (Maybe look at the global variables?)
 	* Figure out the mean average of the rolls we've seen so far.
 	* Figure out the median average of the rolls we've seen so far.
 	* Put those values in the appropriate places on the page.
