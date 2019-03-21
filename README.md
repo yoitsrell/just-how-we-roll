@@ -38,11 +38,15 @@ Besides, you probably _should_ follow these instructions.
 	* Don't figure out the mean in this function: instead, make a new function that can take in an array as a parameter and return the mean of all those numbers.
 	* Do the same for the median! FUNCTIONS GALORE.
 	* Put the mean and median values in the appropriate places on the page, just like before.
-	* Place the image in the corresponding place on the page, just like before.
+	* If you didn't write a helper function for figuring out which url to set the image's `src` property to, this is a really good time to do it! Then place the correct image there.
 4. Now let's do the `rollD12` function. This time, if we did it right so we can take in a parameter like the array or the maximum roll or whatever the function needs, we can use the random number, median, and mean helper functions!
 5. And the same for the `rollD20` function!
 6. Now gaze upon how far you've come since you wrote the `rollD6` function. Good job!
 
 #### Stretch Goals
 
-Coming soon!
+1. Also find the mode of the rolls. Hopefully your solution is less long than my naive one! Make sure you're placing it with the mean and median on the page, which will necessitate adding to the html as well.
+2. Write helper functions to get the image sources for your die rolls. It could take in a roll and give you back the appropriate image source. I highly highly _highly_ encourage you check out template strings, also known as backtick strings. WIth the careful naming of image files you've already got, template strings can make getting the right file path a one-line function!
+3. Tired of having all those `document.querySelector` lines? Me too! We're basically doing only three things with html nodes this time around: setting `innerText` on a node, setting the `src` on an image, or adding an `eventListener` to the node. Focusing on those first two first, you could write a function that takes in a selector and a string and sets the `innerText` of the node it finds to that string, and a function that takes in a selector and an image path and sets the `src` of the appropriate node to that image path.
+4. If you want to go further, you can do the same with `addEventListener` and fix our init function. You can actually take in a function as a parameter as well!
+5. If you want to go _even further_, you can make one function that takes in a selector and some way of telling the function which of our three things to do with it. Not sure it's better, but... it's a different challenge!
