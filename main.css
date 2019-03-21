@@ -2,3 +2,8 @@
     height: 100px;
     width: 100px;
 }
+
+#double-d6-buttons {
+    display: flex;
+    flex-direction: column;
+}

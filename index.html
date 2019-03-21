@@ -11,25 +11,41 @@
 <body>
     <section id="app">
         <section id="die-rolls">
-            <img class="roll" id="d6-roll">
-            <img class="roll" id="double-d6-roll-1">
-            <img class="roll" id="double-d6-roll-2">
-            <img class="roll" src="" id="d12-sided-roll">
-            <img class="roll" src="" id="d20-sided-roll">
+            <section id="d6-button">
+                <h3>Click The Die To Roll</h3>
+                <img class="roll" id="d6-roll">
+            </section>
+            <section id="double-d6-buttons">
+                <header>
+                    <h3>Click The Dice To Roll</h3>
+                </header>
+                <main>
+                    <img class="roll" id="double-d6-roll-1">
+                    <img class="roll" id="double-d6-roll-2">
+                </main>
+            </section>
+            <section id="d12-button">
+                <h3>Click The Die To Roll</h3>
+                <img class="roll" src="" id="d12-roll">
+            </section>
+            <section id="d20-button">
+                <h3>Click The Die To Roll</h3>
+                <img class="roll" src="" id="d20-roll">
+            </section>
         </section>
         <section id="means">
-            <div src="" id="d6-roll-mean"></div>
-            <img class="roll" src="" id="double-d6-roll-mean">
-            <img class="roll" src="" id="d12-roll-mean">
-            <img class="roll" src="" id="d20-sided-roll-mean">
+            <h3 id="d6-rolls-mean"></h3>
+            <h3 id="double-d6-rolls-mean"></h3>
+            <h3 id="d12-rolls-mean"></h3>
+            <h3 id="d20-rolls-mean"></h3>
         </section>
         <section id="medians">
-            <div src="" id="d6-roll-median"></div>
-            <img class="roll" src="" id="double-d6-roll-median">
-            <img class="roll" src="" id="d12-roll-median">
-            <img class="roll" src="" id="d20-sided-roll-median">
+            <h3 id="d6-rolls-median"></h3>
+            <h3 id="double-d6-rolls-median"></h3>
+            <h3 id="d12-rolls-median"></h3>
+            <h3 id="d20-rolls-median"></h3>
         </section>
     </section>
-    <button id="reset-button">Reset</button>
+    <button id="reset-button">Reset All Rolls</button>
 </body>
 </html>
