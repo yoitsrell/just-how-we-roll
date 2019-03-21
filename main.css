@@ -7,3 +7,8 @@
     display: flex;
     flex-direction: column;
 }
+
+#d6, #d12, #d20, #double-d6 {
+    display: flex;
+    justify-content: space-around;
+}
