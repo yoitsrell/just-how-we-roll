@@ -26,7 +26,7 @@ Besides, you probably _should_ follow these instructions.
 
 1. Start with your first roll function, `rollD6`. This function should, in order:
 	* Get a random number from 1-6, using `Math.random`, `Math.ceil`, and the number 6. **Save it somewhere**, because we'll be using it!
-	* Add that number to a list of rolls. (Maybe look at the global variables?)
+	* Add that number to a list of rolls. A global array would help here!
 	* Figure out the mean average of the rolls we've seen so far.
 	* Figure out the median average of the rolls we've seen so far.
 	* Put those values in the appropriate places on the page.
@@ -45,8 +45,9 @@ Besides, you probably _should_ follow these instructions.
 
 #### Stretch Goals
 
+
 1. Write helper functions to get the image sources for your die rolls. It could take in a roll and give you back the appropriate image source. I highly highly _highly_ encourage you check out template strings, also known as backtick strings. WIth the careful naming of image files you've already got, template strings can make getting the right file path a one-line function!
 2. Tired of having all those `document.querySelector` lines? Me too! We're basically doing only three things with html nodes this time around: setting `innerText` on a node, setting the `src` on an image, or adding an `eventListener` to the node. Focusing on those first two first, you could write a function that takes in a selector and a string and sets the `innerText` of the node it finds to that string, and a function that takes in a selector and an image path and sets the `src` of the appropriate node to that image path.
 3. If you want to go further, you can do the same with `addEventListener` and fix our init function. You can actually take in a function as a parameter as well!
 4. If you want to go _even further_, you can make one function that takes in a selector and some way of telling the function which of our three things to do with it. Not sure it's better, but... it's a different challenge!
-5. Also find the mode of the rolls. Hopefully your solution is less long than my naive one! Make sure you're placing it with the mean and median on the page, which will necessitate adding to the html as well.
+5. Also find the mode of the rolls. This is a little cleaner with objects, but there's absolutely a way to do it with arrays instead. Feel free to take a shortcut with objects, though it requires... knowing objects. Either way, place it on the page, just like with our medians and means. You'll likely have to put some more html down to have somewhere to place it.
