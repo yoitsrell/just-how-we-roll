@@ -4,11 +4,11 @@
 
 Today we'll be dealing with dice, and we'll make you DIE laughing at the PUNishing jokes you'll be on the receiving end of.
 
-#### What Does This App Do?
+### What Does This App Do?
 
 Every time we click on a die, we get back a random result according to the possibilities of that die or set of dice. In other words, if we click on the six-sided die, we get a number 1-6. If we click on the pair of six-sided dice, we get a number from 2-12 (because you can't get 1 with two dice!).
 
-While the user is seeing how they felt (craps pun... just ROLL with it) about that result, we calculate the mean average and median average of the rolls so far, and give that data to them.
+While the user is seeing how they felt--craps pun!--about that result, we calculate the mean average and median average of the rolls so far, and give that data to the user.
 
 Try not to DIE from how hard this is!
 
@@ -16,32 +16,47 @@ Oh, I already used that pun?
 
 Dangit, there just isn't that much to work with here.
 
-#### What steps should I take to get there?
+
+### Some Guidelines
+
+* Unlike some other apps, we're changing the DOM based only on simple input, not the state of anything on the DOM (no text inputs here!). So we do NOT need to worry about stale queries, and we can query everything globally.
+
+
+### Getting To Know You
+
+Let's get acquainted with what we start with:
+
+* Our html and css are already set up, for sure, but check out the html elements. You'll be hooking into them with some queries.
+* We've got four global arrays declared for us that will hold all our rolls.
+* We've got our `getRandomNumber` function that takes in a number and gives you a random number back from 1 to that given number. Give it a 6 and you'll get a random number 1-6. Give it a 20 and you'll get a 1-20. We'll need that to generate our rolls.
+* We've got a sortByNumber function that, given an array, returns an array sorted by number (without mutating the original). This is useful for the median calculation!
+
+
+### Getting Rolling
 
 You could try to go without instructions here for a real challenge. Be the star, not a ROLL PLAYER.
 
 Okay, that pun was a reeeeeaaaaaal stretch. I'm done now.
 
-Besides, you probably _should_ follow these instructions.
+Besides, you probably _should_ follow these getting-started instructions.
 
-1. Start with your first roll function, `rollD6`. This function should, in order:
-	* Get a random number from 1-6, using `Math.random`, `Math.ceil`, and the number 6. **Save it somewhere**, because we'll be using it!
-	* Add that number to a list of rolls. A global array would help here!
-	* Figure out the mean average of the rolls we've seen so far.
-	* Figure out the median average of the rolls we've seen so far.
-	* Put those values in the appropriate places on the page.
-	* Place the image corresponding to our roll (it's in the repo already!) on the page, _replacing the image they clicked on_.
-2. Now, that there is a long and ugly function. But we want you to leave it like that. DO NOT REFACTOR IT. We'll make the following roll functions much better!
-3. Make the second roll function, `rollDoubleD6`, following these steps:
-	* For this one, let's make a `getRandomRoll` function, so that we can call it (twice!) in this function. It should have the same code as before, but it can `return` the random number 1-6, the `return` value of which we can set as a variable. Once again, **do not** refactor the `rollD6` function. We wants its ugliness preserved so we can remember what happens if we don't write little helper functions.
-	* Add the number to a list of rolls, just like before.
-	* Don't figure out the mean in this function: instead, make a new function that can take in an array as a parameter and return the mean of all those numbers.
-	* Do the same for the median! FUNCTIONS GALORE.
-	* Put the mean and median values in the appropriate places on the page, just like before.
-	* If you didn't write a helper function for figuring out which url to set the image's `src` property to, this is a really good time to do it! Then place the correct image there.
-4. Now let's do the `rollD12` function. This time, if we did it right so we can take in a parameter like the array or the maximum roll or whatever the function needs, we can use the random number, median, and mean helper functions!
-5. And the same for the `rollD20` function!
-6. Now gaze upon how far you've come since you wrote the `rollD6` function. Good job!
+1. Add a global variable holding the result of querying the d6 image. We'll refer to it in several different functions, so storing it globally like this will help! For ease of coding, we'll do the d6 the whole way through; then we can generalize from there to the related problem of the other dice.
+2. Add a function that will be our click handler for rolling that d6. We'll wire it up momentarily, but here's what it needs to do:
+  * use `getRandomNumber` to get a roll from 1-6.
+  * add that value to our `sixes` array.
+  * Set the source for the image we queried in step 1. Remember that you can build the string, and that the only thing that changes between the path to one six-sided image and another is the number for the filename--`1.png~ vs. `2.png`, and so on. We've got that number already!
+  NOW. Try calling that function just from the dev tools console. You should see the image change!
+3. Wire it up! Add an event listener for the d6 button, launching our click handler from step 2. Test it by clicking on the image!
+
+
+### The Rest
+
+In no particular order, you'll need to:
+
+* Do those three above steps for each other die (or set of dice). Watch out for those double dice, they're a bit tricky!
+* Add functions to get the mean and median of any passed in array, then, in each click handler, call them to get the return values nad put them in the mean and median sections of the DOM.
+* Add a reset function tied to the reset button that removes all the values from each array, resets the die images to their start images, and removes the text from the mean and median sections.
+
 
 #### Stretch Goals
 
