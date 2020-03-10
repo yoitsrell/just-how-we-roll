@@ -9,23 +9,37 @@ const twelves = [];
 const twenties = [];
 
 
-/*************************
- * RANDOM ROLL GENERATOR *
- *************************/
+/*******************************************************************
+ * METHOD-Y HELPER FUNCTIONS YOUR BACK-END DEV HAS WRITTEN FOR YOU *
+ ******************************************************************/
 
 
-function getRandomNumber(max) {
-    const rand = Math.random();
-    const range = rand * max;
-    const result = Math.ceil(range);
-    
-    return result;
+const getRandomNumber = function(max) {
+  const rand = Math.random();
+  const range = rand * max;
+  const result = Math.ceil(range);
+
+  return result;
+}
+
+const sortByNumber = function(arr) {
+  const byNumber = function(item1, item2) {
+    return item1 - item2;
+  }
+
+  return arr.slice().sort(byNumber);
 }
 
 
-/*******************
- * YOUR CODE BELOW *
- *******************/
+
+/******************
+ * BUTTON QUERIES *
+ ******************/
+
+
+/******************
+ * CLICK HANDLERS *
+ ******************/
 
 
 /*******************
@@ -38,6 +52,9 @@ function getRandomNumber(max) {
  ****************/
 
 
-/*********
- * RESET *
- *********/
+
+/********************
+* MATH-AREA QUERIES *
+********************/
+
+
