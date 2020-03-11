@@ -40,12 +40,14 @@ const dSix1 = document.querySelector("#double-d6-roll-1")
 const dSix2 = document.querySelector("#double-d6-roll-2")
 const d12 = document.querySelector("#die-12")
 const dTwenty = document.querySelector('#d20-roll')
+const reset = document.querySelector('#reset-button')
 /******************
  * CLICK HANDLERS *
  ******************/
 function sixGrab(){
 let number =  getRandomNumber(6) //ask why sixes.push(getRandomNumber(6)) didn't work
 sixes.push(number)
+
 
 switch (number){
   case 1:
@@ -66,10 +68,11 @@ switch (number){
     case 6:
     dSix.src = `images/d6/6.png`
       break;
-  default:
-    dSix.src = `images/start/d6/.png`
-        }
-}
+      default:
+        dSix.src = `images/start/d6/.png`
+      }
+sixRollsMean.innerText = mean(sixes)
+    }
 
 function doubleSixGrab(){
   let num1 = getRandomNumber(6)
@@ -121,6 +124,7 @@ switch (num2){
             default:
               dSix2.src = `images/start/d6/.png`
 }
+sixOneMean.innerText = mean(doubleSixes)
 }
 
 function twelveGrab(){
@@ -166,6 +170,7 @@ function twelveGrab(){
     //default:
       //d12.src = `images/start/d12/.png`
 }
+twelveMean.innerText = mean(twelves)
 }
 
 function twentyGrab(){
@@ -236,8 +241,12 @@ switch (num1){
   //default:
     //dTwenty.src = `images/start/d20.jpg`
 }
+twentyMean.innerText = mean(twenties)
 }
 
+function resetAll(){
+location.reload()
+}
 /*******************
  * EVENT LISTENERS *
  *******************/
@@ -246,15 +255,34 @@ dSix1.addEventListener('click', doubleSixGrab)
 dSix2.addEventListener('click', doubleSixGrab)
 d12.addEventListener('click', twelveGrab)
 dTwenty.addEventListener('click', twentyGrab)
-
+reset.addEventListener('click', resetAll)
 /****************
  * MATH SECTION *
  ****************/
+function mean(array){
+let avg = 0
+for (let i = 0; i < array.length; i++)
+avg += array[i];
+return sum / (array.length)
+}
 
-
+function median(array){
+let median = array
+let low = math.floor((median.length - 1)/2)
+let high = math.ceil((median.length-1)/2)
+let median = (values[low] + values[high])/2
+median.sort(function(a,b){return b-a})
+}
 
 /********************
 * MATH-AREA QUERIES *
 ********************/
+sixRollsMean = document.querySelector('#d6-rolls-mean')
+sixRollsMedian = document.querySelector('#d6-rolls-median')
+
+sixOneMean = document.querySelector('#double-d6-rolls-mean')
 
 
+twelveMean = document.querySelector('#d12-rolls-mean')
+
+twentyMean = document.querySelector('#d20-rolls-mean')
