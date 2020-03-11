@@ -72,6 +72,7 @@ switch (number){
         dSix.src = `images/start/d6/.png`
       }
 sixRollsMean.innerText = mean(sixes)
+sixRollsMedian.innerText = median(sixes)
     }
 
 function doubleSixGrab(){
@@ -125,6 +126,7 @@ switch (num2){
               dSix2.src = `images/start/d6/.png`
 }
 sixOneMean.innerText = mean(doubleSixes)
+sixOneMedian.innerText = median(doubleSixes)
 }
 
 function twelveGrab(){
@@ -171,6 +173,7 @@ function twelveGrab(){
       //d12.src = `images/start/d12/.png`
 }
 twelveMean.innerText = mean(twelves)
+//twelveMedian.innerText = median(twelves)
 }
 
 function twentyGrab(){
@@ -242,6 +245,7 @@ switch (num1){
     //dTwenty.src = `images/start/d20.jpg`
 }
 twentyMean.innerText = mean(twenties)
+twelveMedian.innerText = median(twenties)
 }
 
 function resetAll(){
@@ -271,7 +275,7 @@ let median = array
 let low = math.floor((median.length - 1)/2)
 let high = math.ceil((median.length-1)/2)
 let median = (values[low] + values[high])/2
-median.sort(function(a,b){return b-a})
+return median.sort(function(a,b){return b-a})
 }
 
 /********************
@@ -281,8 +285,10 @@ sixRollsMean = document.querySelector('#d6-rolls-mean')
 sixRollsMedian = document.querySelector('#d6-rolls-median')
 
 sixOneMean = document.querySelector('#double-d6-rolls-mean')
-
+sixOneMedian = document.querySelector('#double-d6-rolls-median')
 
 twelveMean = document.querySelector('#d12-rolls-mean')
+twelveMedian = document.querySelector('#d12-rolls-median')
 
 twentyMean = document.querySelector('#d20-rolls-mean')
+twentyMedian = document.querySelector('#d20-rolls-median')
