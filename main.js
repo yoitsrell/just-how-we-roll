@@ -270,13 +270,13 @@ avg += array[i];
 return sum / (array.length)
 }
 
-function median(array){
-let median = array
-let low = math.floor((median.length - 1)/2)
-let high = math.ceil((median.length-1)/2)
-let median = (values[low] + values[high])/2
-return median.sort(function(a,b){return b-a})
-}
+// function median(array){
+// let median = array
+// let low = math.floor((median.length - 1)/2)
+// let high = math.ceil((median.length-1)/2)
+// let median = (values[low] + values[high])/2
+// return median.sort(function(a,b){return b-a})
+// }
 
 /********************
 * MATH-AREA QUERIES *
