@@ -233,7 +233,7 @@ switch (num1){
     dTwenty.src = `images/numbers/17.png`
       break;
   case 18:
-    dTwenty.src = `images/numbers/18/png`
+    dTwenty.src = `images/numbers/18/.png`
       break;
   case 19:
     dTwenty.src = `images/numbers/19.png`
@@ -267,15 +267,15 @@ function mean(array){
 let avg = 0
 for (let i = 0; i < array.length; i++)
 avg += array[i];
-return sum / (array.length)
+return avg / (array.length)
 }
 
 // function median(array){
-// let median = array
-// let low = math.floor((median.length - 1)/2)
-// let high = math.ceil((median.length-1)/2)
-// let median = (values[low] + values[high])/2
-// return median.sort(function(a,b){return b-a})
+// let newMed= array
+// let low = math.floor((newMed.length - 1)/2)
+// let high = math.ceil((newMed.length-1)/2)
+// let newMed = (values[low] + values[high])/2
+// return newMed.sort(function(a,b){return b-a})
 // }
 
 /********************
